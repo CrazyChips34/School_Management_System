@@ -70,8 +70,12 @@ public class Main {
         System.out.println("\nEnter the number of teachers you want to add:");
         int numTeachers = getValidIntegerInput(scanner); // Validate input as an integer
         for (int i = 0; i < numTeachers; i++) {
-            System.out.println("Enter teacher name:");
-            String teacherName = scanner.next();
+            String teacherName;
+            do {
+                System.out.println("Enter teacher name (should start with a letter and contain only letters):");
+                teacherName = scanner.next().trim();
+            } while (!isValidName(teacherName)); // Repeat until a valid name is provided
+
             System.out.println("Enter teacher salary:");
             double teacherSalary = getValidDoubleInput(scanner); // Validate input as a double
 
@@ -87,8 +91,12 @@ public class Main {
         System.out.println("\nEnter the number of students you want to add:");
         int numStudents = getValidIntegerInput(scanner); // Validate input as an integer
         for (int i = 0; i < numStudents; i++) {
-            System.out.println("Enter student name:");
-            String studentName = scanner.next();
+            String studentName;
+            do {
+                System.out.println("Enter student name (should start with a letter and contain only letters):");
+                studentName = scanner.next().trim();
+            } while (!isValidName(studentName)); // Repeat until a valid name is provided
+
             System.out.println("Enter student grade:");
             int studentGrade = getValidIntegerInput(scanner); // Validate input as an integer
 
@@ -97,6 +105,11 @@ public class Main {
             studentList.add(student);
         }
         System.out.println("Students added successfully!");
+    }
+
+    private static boolean isValidName(String name) {
+        // Regular expression to check if the name contains only alphabetic characters and doesn't start with a number
+        return name.matches("^[a-zA-Z][a-zA-Z]*$");
     }
 
     // Method to view details of all teachers
