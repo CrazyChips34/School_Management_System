@@ -5,8 +5,11 @@ package school_management_sytem;
 *
 */
 
+import java.util.List;
+
 public class Student {
-    private int id;
+    private int studentId;
+    private static int nextStudentId = 0;
     private String name;
     private int grade;
     private double feesPaid;
@@ -17,10 +20,11 @@ public class Student {
     * Fees is R30 000 per year
     * fees paid initial 0
     * */
-    public Student(int id, String name, int grade){
+    public Student(String name, int grade){
         feesPaid = 0;
         feesTotal = 30000;
-        this.id=id;
+        this.studentId=nextStudentId;
+        nextStudentId++;
         this.name=name;
         this.grade=grade;
 
@@ -32,7 +36,7 @@ public class Student {
 
 
     public int getId() {
-        return id;
+        return studentId;
     }
 
     public String getName() {
@@ -75,6 +79,9 @@ public class Student {
         return "Student's name: " + name
                 + "\nTotal fees paid so far R" + feesPaid;
 
+    }
+    private static void viewOutstandingFees(List<Student> studentList, School school) {
+        school.viewOutstandingFees(studentList);
     }
 }
 

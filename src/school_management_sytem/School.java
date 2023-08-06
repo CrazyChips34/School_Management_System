@@ -60,4 +60,15 @@ public class School {
     public static void updateTotalMoneySpent(double MoneySpent) {
      totalMoneyEarned -= MoneySpent;
     }
+
+    public void viewOutstandingFees(List<Student> studentList) {
+        for (Student student : studentList) {
+            double outstandingFees = student.getFeesPaid() - student.getFeesTotal();
+            if (outstandingFees > 0) {
+                System.out.println(student.getName() + " has outstanding fees of R" + outstandingFees);
+            } else {
+                System.out.println(student.getName() + " has no outstanding fees");
+            }
+        }
+    }
 }

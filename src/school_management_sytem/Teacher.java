@@ -4,19 +4,21 @@ package school_management_sytem;
  * keeps track of teachers information name, id & salary
  */
 public class Teacher {
-    private int id;
+    private int teacherId;
+    private static int nextTeacherId = 1;
     private String name;
     private double salary;
     private double salaryEarned;
 
     /**
      * Creates a teacher object
-     * @param id for the teacher
-     * @param name of the teacher
+     *
+     * @param name   of the teacher
      * @param salary of the teacher
      */
-    public Teacher(int id, String name, double salary){
-        this.id = id;
+    public Teacher(String name, double salary){
+        this.teacherId = nextTeacherId;
+        nextTeacherId++;
         this.name = name;
         this.salary = salary;
         this.salaryEarned = 0;
@@ -27,7 +29,7 @@ public class Teacher {
      * @return the id,name
      */
     public int getId() {
-        return id;
+        return teacherId;
     }
 
     public String getName() {
