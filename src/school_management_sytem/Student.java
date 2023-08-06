@@ -83,7 +83,6 @@ public class Student {
     private static void viewOutstandingFees(List<Student> studentList, School school) {
         school.viewOutstandingFees(studentList);
     }
-    /**/
 }
 
 
