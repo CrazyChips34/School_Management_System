@@ -25,4 +25,7 @@ Create "School Management System'- "Students, Teachers and then the funds."
  fees total
 
 -use scanner to add new teachers and students
--
+-Students: Options to view the outstanding fees that must still be paid
+-Teachers: view all teachers and their monthly salary
+
+
