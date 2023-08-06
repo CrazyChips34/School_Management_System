@@ -82,7 +82,7 @@ public class Main {
             // Create a new Teacher object and add it to the teacherList
             Teacher teacher = new Teacher(teacherName, teacherSalary);
             teacherList.add(teacher);
-        }
+        }/**/
         System.out.println("Teachers added successfully!");
     }
 

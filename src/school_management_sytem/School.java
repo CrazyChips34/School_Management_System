@@ -32,7 +32,7 @@ public class School {
     public List<Teacher> getTeachers() {
         return teachers;
     }
-
+    /**/
     public void addTeachers(Teacher teacher) {
         teachers.add(teacher);
     }
