@@ -2,10 +2,10 @@ package school_management_sytem;
 /*
 *
 * Keeping track of students fees, name and grade
-*
+* import java.util.List;
 */
 
-import java.util.List;
+
 
 public class Student {
     private int studentId;
@@ -80,9 +80,9 @@ public class Student {
                 + "\nTotal fees paid so far R" + feesPaid;
 
     }
-    private static void viewOutstandingFees(List<Student> studentList, School school) {
+    /*private static void viewOutstandingFees(List<Student> studentList, School school) {
         school.viewOutstandingFees(studentList);
-    }
+    }*/
 }
 
 
